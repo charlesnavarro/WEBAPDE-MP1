@@ -1,0 +1,618 @@
+<html>
+
+<head>
+    <title>Memes</title>
+    <style>
+        header {
+            width: 100%;
+            height: 50px;
+            box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2);
+            background-color: #fafafa;
+            display: flex;
+            flex-direction: row;
+            position: sticky;
+            top: 1px;
+        }
+
+        body {
+            margin: 0;
+            background-color: #d6d6d6;
+            color: black;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        div.homearea {
+            font-size: 25px;
+            margin-left: 0 px;
+            width: 100px;
+            font-family: sans-serif;
+        }
+
+        div.loginarea {
+            float: right;
+            margin: 10px;
+        }
+
+        div.searcharea {
+            margin: 10 auto;
+            width: 550px;
+            padding-left: 0px;
+        }
+
+        div.titlearea {
+            float: left margin:10px;
+            font-style: normal;
+            font-size: 40px;
+            margin-left: 10px;
+            width: 180px;
+        }
+
+        #home {
+            background-color: #fafafa;
+            color: black;
+            padding: 11px 15px;
+            display: inline-block;
+            font-family: Arial Narrow, sans-serif;
+            margin-left: 0px;
+        }
+
+        #home:hover {
+            background-color: #f5f5f5;
+            box-shadow: 0px 0px 2px rgba(30, 30, 30, 0.3);
+        }
+
+        #submit {
+            background-color: darkgray;
+            color: white;
+            padding: 5px 15px;
+            display: inline-block;
+            font-family: sans-serif;
+            border-radius: 3px;
+            margin-left: 10px;
+        }
+
+        #submit:hover {
+            background-color: #797979;
+            box-shadow: 0px 0px 2px rgba(30, 30, 30, 0.3);
+        }
+
+        #login {
+            background-color: darkgray;
+            color: white;
+            padding: 5px 15px;
+            display: inline-block;
+            font-family: sans-serif;
+            border-radius: 3px;
+            margin-left: 10px;
+        }
+
+        #login:hover {
+            background-color: #797979;
+            box-shadow: 0px 0px 2px rgba(30, 30, 30, 0.3);
+        }
+
+        #signup {
+            background-color: darkgray;
+            color: white;
+            padding: 5px 15px;
+            display: inline-block;
+            font-family: sans-serif;
+            border-radius: 3px;
+            margin-left: 10px;
+        }
+
+        #signup:hover {
+            background-color: #797979;
+            box-shadow: 0px 0px 2px rgba(30, 30, 30, 0.3);
+        }
+
+        #chat_input {
+            width: 400px;
+            height: 30px;
+            margin-left: 0px;
+        }
+
+        /*upload section*/
+
+        section.upload {
+            width: 600px;
+            height: 300px;
+            margin: 1 auto;
+            background-color: #fafafa;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+            margin-top: 5px;
+            margin-bottom: 5px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        div.uploadameme {
+            width: 100%;
+            height: 15px;
+            margin-top: 10px;
+            font-family: Optima, sans-serif;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #memetitleinputbox {
+            width: 560px;
+            height: 30px;
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+
+        div.memetitleinputarea {
+            width: 100%;
+            height: 50px;
+        }
+
+        div.uploadarea {
+            width: 100%;
+            height: 40px;
+        }
+
+        #choosefile {
+            background-color: darkgray;
+            color: white;
+            padding: 5px 15px;
+            display: inline-block;
+            font-family: sans-serif;
+            border-radius: 3px;
+            margin-top: 5px;
+            margin-left: 20px;
+        }
+
+        #choosefile:hover {
+            background-color: #797979;
+            box-shadow: 0px 0px 2px rgba(30, 30, 30, 0.3);
+        }
+
+        #uploadfile {
+            background-color: darkgray;
+            color: white;
+            padding: 5px 15px;
+            display: inline-block;
+            font-family: sans-serif;
+            border-radius: 3px;
+            margin-top: 5px;
+            margin-right: 20px;
+            float: right;
+        }
+
+        #uploadfile:hover {
+            background-color: #797979;
+            box-shadow: 0px 0px 2px rgba(30, 30, 30, 0.3);
+        }
+
+        div.memetagsinputarea {
+            width: 100%;
+            height: 50px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        div.uploadtextcontainer {
+            padding-top: 15;
+            padding-left: 10;
+        }
+
+        #memetagsinputbox {
+            width: 500px;
+            height: 30px;
+            margin-top: 10px;
+            margin-left: 35px;
+        }
+
+        div.memeshareinputarea {
+            width: 100%;
+            height: 70px;
+            margin-left: 10;
+            margin-top: 10
+        }
+
+        #memeshareinputbox {
+            width: 500px;
+            height: 30px;
+            margin-top: 10px;
+            margin-left: 72px;
+        }
+
+        div.memepublicprivatearea {
+            width: 100%;
+            height: 50px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        #publicprivatebox {
+            margin-top: 9px;
+            margin-left: 10px;
+            height: 30px;
+        }
+
+        /*memes section*/
+
+        section.memes {
+            width: 600px;
+            height: 100%;
+            margin: 1 auto;
+            background-color: #fafafa;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        div.memebox {
+            border-bottom: 0.5px #E6ECF0 solid;
+            background-color: white;
+            display: flex;
+            padding: 10px;
+            transition-duration: 0.5s;
+            transition-property: all;
+            transition-timing-function: ease;
+            height: 500px;
+            flex-direction: column;
+        }
+
+        div.posterusername {
+            color: #8e8e8e;
+            width: 100%;
+        }
+
+        div.userwhopostedmemebox {
+            height: 30px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        div.memetitle {
+            height: 30px;
+            width: 100%;
+            text-align: center;
+            font-style: normal;
+            font-size: 20px;
+            color: #717171;
+        }
+
+        div.mememediabox {
+            height: 350px;
+            width: 100%;
+            padding: 10px;
+        }
+
+        div.memetagsarea {
+            width: 100%;
+            height: 25px;
+            margin-left: 5;
+            padding: 5px;
+            display: flex;
+            flex-direction: row;
+            font-family: Optima, sans-serif;
+            font-size: 15px;
+        }
+
+        div.memetag {
+            margin: 3px;
+            font-family: Optima, sans-serif;
+            font-size: 20px;
+            color: darkgrey;
+        }
+
+        div.likesharearea {
+            width: 100%;
+            height: 40px;
+            margin-left: 5;
+            padding: 5px;
+
+        }
+
+        #likebutton {
+            background-color: #a9a9a9;
+            color: white;
+            padding: 5px 15px;
+            display: inline-block;
+            font-family: sans-serif;
+            border-radius: 3px;
+            margin-top: 5px;
+            margin-right: 20px;
+            float: left;
+        }
+
+        #sharebutton {
+            background-color: darkgray;
+            color: white;
+            padding: 5px 15px;
+            display: inline-block;
+            font-family: sans-serif;
+            border-radius: 3px;
+            margin-top: 5px;
+            margin-right: 20px;
+            float: right;
+        }
+
+        /*sample meme temporary*/
+
+        div.samplememe1 {
+            background-image: url(advance.png);
+            background-size: cover;
+            margin-right: 15px;
+            border: 0.5px rgba(0, 0, 0, 0.12);
+            height: 350px;
+        }
+
+        div.samplememe2 {
+            background-image: url(twotimesna.jpg);
+            background-size: cover;
+            margin-right: 15px;
+            border: 0.5px rgba(0, 0, 0, 0.12);
+            height: 350px;
+        }
+
+        div.samplememe3 {
+            background-image: url(shrek.jpg);
+            background-size: cover;
+            margin-right: 15px;
+            border: 0.5px rgba(0, 0, 0, 0.12);
+            height: 350px;
+        }
+
+        div.samplememe4 {
+            background-image: url(croeng.jpg);
+            background-size: cover;
+            margin-right: 15px;
+            border: 0.5px rgba(0, 0, 0, 0.12);
+            height: 350px;
+        }
+
+        div.samplememe5 {
+            background-image: url(jimmyneutron.jpg);
+            background-size: cover;
+            margin-right: 15px;
+            border: 0.5px rgba(0, 0, 0, 0.12);
+            height: 350px;
+        }
+        
+        section.user {
+            width: 300px;
+            height: 400px;
+            background-color: #fafafa;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+            left: 0px;
+            top: 53px;
+            margin-top: 15px;
+            margin-left: 20px;
+            border-radius: 25px;
+            position: absolute;
+        }
+
+        div.userbox {
+            border-bottom: 0.5px #E6ECF0 solid;
+            border-radius: 25px;
+            display: flex;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            transition-duration: 0.5s;
+            transition-property: all;
+            transition-timing-function: ease;
+            height: 400px;
+            width: 300px;
+            flex-direction: row;
+            box-shadow: 2px 3px 3px grey;
+        }
+
+        div.DP {
+            background-image: url(fritz.jpg);
+            margin-top: 5px;
+            margin-left: 5px;
+            border-radius: 25px;
+            background-size: cover;
+            margin-right: 15px;
+            border: 0.5px rgba(0, 0, 0, 0.12);
+            height: 60px;
+            width: 60px;
+            display: inline-block;
+        }
+
+        div.description {
+            line-height: 1.5;
+            width: 100%;
+            text-align: left;
+            font-style: normal;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        .username {
+            margin-top: 5px;
+            margin-left: 5px;
+            display: inline-block;
+        }
+
+        div.user_container {
+            height: 100%;
+            width: 60px;
+        }
+
+        div.right {
+            margin: 5 10 10 10px;
+        }
+
+        div.recent {
+            margin-top: 15px;
+            color: #657786;
+        }
+
+        div.recentmeme {
+            margin-right: 10;
+            background-image: url(advance.png);
+            align-content: center;
+            height: 100%;
+            width: 100%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            display: inline-block;
+        }
+
+        span.usertag {
+            margin-left: 10px;
+            font-size: 12px;
+            display: block;
+            color: darkgrey;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <div class="titlearea">8Memes</div>
+        <div class="homearea">
+            <div id="home"><a href="LoggedMain.html">Home</a></div>
+        </div>
+        <div class="searcharea">
+            <input type="text" id="chat_input" />
+            <div id="submit"><a href="LoggedFilipinotag.html">Search</a></div>
+        </div>
+        <div class="loginarea">
+            <div id="login"><a href="index.html">Logout</a></div>
+        </div>
+    </header>
+
+    <section class="upload">
+        <div class="uploadameme">
+            Upload a meme</div>
+        <div class="memetitleinputarea">
+            <input type="text" placeholder="Give your meme a dank title!" id="memetitleinputbox" />
+        </div>
+        <div class="uploadarea">
+            <div id="choosefile">Choose File</div>
+            <div id="uploadfile">Upload</div>
+        </div>
+        <div class="memetagsinputarea">
+            <div class="uploadtextcontainer">Tags:</div>
+            <input type="text" placeholder="Input your tags here!" id="memetagsinputbox" />
+        </div>
+        <div class="memeshareinputarea">
+            Share to Specific users:
+            <input type="text" placeholder="Who are you sharing this to?" id="memeshareinputbox" />
+        </div>
+        <div class="memepublicprivatearea">
+            <div class="uploadtextcontainer">Settings:</div>
+            <select id="publicprivatebox">
+                        <option value="public">Public</option>
+                        <option value="private">Private</option>
+                    </select>
+        </div>
+
+    </section>
+
+    <section class="memes">
+        <div class="memebox">
+            <div class="userwhopostedmemebox">
+                <div class="posterusername"><a href="Logged.html">Fritz_Calimag</a></div>
+            </div>
+            <div class="memetitle"><a href="Loggedmeme1.html">advanced ako mag isip</a></div>
+            <div class="mememediabox">
+                <div class="samplememe1"></div>
+            </div>
+            <div class="memetagsarea">Tags:
+                <div class="memetag"><a href="LoggedFilipinotag.html">Filipino</a></div>
+                <div class="memetag"><a href="LoggedDanktag.html">Dank</a></div>
+            </div>
+            <div class="likesharearea">
+                <div id="likebutton">Like</div>
+                <div id="sharebutton">Share</div>
+            </div>
+        </div>
+
+        <div class="memebox">
+            <div class="userwhopostedmemebox">
+                <div class="posterusername"><a href="LoggedBaarde.html">Miguel_Baarde</a></div>
+            </div>
+            <div class="memetitle"><a href="Loggedmeme2.html">Dalawang beses na yan</a></div>
+            <div class="mememediabox">
+                <div class="samplememe2"></div>
+            </div>
+            <div class="memetagsarea">Tags:
+                <div class="memetag"><a href="LoggedFilipinotag.html">Filipino</a></div>
+                <div class="memetag"><a href="LoggedDanktag.html">Dank</a></div>
+            </div>
+            <div class="likesharearea">
+                <div id="likebutton">Like</div>
+                <div id="sharebutton">Share</div>
+            </div>
+        </div>
+
+        <div class="memebox">
+            <div class="userwhopostedmemebox">
+                <div class="posterusername"><a href="LoggedCharles.html">Charles_Navarro</a></div>
+            </div>
+            <div class="memetitle"><a href="Loggedmeme3.html">Shrek Wazowski</a></div>
+            <div class="mememediabox">
+                <div class="samplememe3"></div>
+            </div>
+            <div class="memetagsarea">Tags:
+                <div class="memetag"><a href="LoggedShrektag.html">Shrek</a></div>
+                <div class="memetag"><a href="LoggedDanktag.html">Dank</a></div>
+            </div>
+            <div class="likesharearea">
+                <div id="likebutton">Like</div>
+                <div id="sharebutton">Share</div>
+            </div>
+        </div>
+
+        <div class="memebox">
+            <div class="userwhopostedmemebox">
+                <div class="posterusername"><a href="LoggedBaarde.html">Miguel_Baarde</a></div>
+            </div>
+            <div class="memetitle"><a href="Loggedmeme4.html">Croatia 2 - 1 England</a></div>
+            <div class="mememediabox">
+                <div class="samplememe4"></div>
+            </div>
+            <div class="memetagsarea">Tags:
+                <div class="memetag"><a href="LoggedSportstag.html">Sports</a></div>
+            </div>
+            <div class="likesharearea">
+                <div id="likebutton">Like</div>
+                <div id="sharebutton">Share</div>
+            </div>
+        </div>
+
+        <div class="memebox">
+            <div class="userwhopostedmemebox">
+                <div class="posterusername"><a href="Logged.html">Fritz_Calimag</a></div>
+            </div>
+            <div class="memetitle"><a href="Loggedmeme5.html">I love anime</a></div>
+            <div class="mememediabox">
+                <div class="samplememe5"></div>
+            </div>
+            <div class="memetagsarea">Tags:
+                <div class="memetag"><a href="LoggedAnimetag.html">Anime</a></div>
+            </div>
+            <div class="likesharearea">
+                <div id="likebutton">Like</div>
+                <div id="sharebutton">Share</div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="user">
+        <div class="userbox">
+            <div class="user_container">
+                <div class="DP"></div>
+            </div>
+            <div class="right">
+                <span class="username">Fritz Calimag</span>
+                <span class="usertag">@Fritz_Calimag</span>
+                <div class="description">Yeet</div>
+                <div class="recent">Recently posted meme</div>
+                <div class="recentmeme"></div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
